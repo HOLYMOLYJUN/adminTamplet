@@ -1,0 +1,35 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite
+/dist
+
+# 환경 변수
+.env
+.env.*
+
+# 운영체제별
+.DS_Store
+Thumbs.db
+
+# IDE/에디터
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 로그
+logs
+*.log
+
+# 빌드
+build/
+
+# 기타
+*.local 

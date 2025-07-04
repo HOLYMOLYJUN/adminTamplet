@@ -1,0 +1,136 @@
+.dashboard-card {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.card-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  transition: all var(--transition-fast);
+}
+
+.card-menu:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.dots {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card-content {
+  margin-bottom: var(--spacing-md);
+}
+
+.card-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.card-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.change-indicator {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.change-indicator.positive {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--success-color);
+}
+
+.change-indicator.negative {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+}
+
+.card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.card-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 75%;
+  transition: width var(--transition-slow);
+}
+
+
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .dashboard-card {
+    padding: var(--spacing-md);
+  }
+  
+  .card-value {
+    font-size: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 0.8rem;
+  }
+  
+  .card-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .card-value {
+    font-size: 1.3rem;
+  }
+} 

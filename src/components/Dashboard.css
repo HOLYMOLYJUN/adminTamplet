@@ -1,0 +1,135 @@
+.dashboard {
+  flex: 1;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-primary);
+  min-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  padding-top: 0;
+}
+
+.dashboard-content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 대시보드 카드들 */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 차트 섹션 */
+.charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.chart-col {
+  min-height: 400px;
+}
+
+.chart-col.full-width {
+  grid-column: 1 / -1;
+  min-height: 400px;
+}
+
+/* 피드백 섹션 */
+.feedback-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.feedback-col {
+  min-height: 300px;
+}
+
+/* 테이블 섹션 */
+.tables-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.table-col {
+  min-height: 400px;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-col {
+    min-height: 350px;
+  }
+  
+  .tables-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--spacing-md);
+  }
+  
+  .dashboard-content {
+    gap: var(--spacing-md);
+  }
+  
+  .dashboard-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+  
+  .charts-section {
+    gap: var(--spacing-md);
+  }
+  
+  .charts-row {
+    gap: var(--spacing-md);
+  }
+  
+  .chart-col {
+    min-height: 300px;
+  }
+  
+  .tables-section {
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: var(--spacing-sm);
+  }
+  
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-col {
+    min-height: 250px;
+  }
+  
+  .table-col {
+    min-height: 300px;
+  }
+} 

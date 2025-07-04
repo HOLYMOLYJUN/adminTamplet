@@ -1,0 +1,193 @@
+.chart-container {
+  background-color: var(--bg-light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  height: 100%;
+  padding-bottom: var(--spacing-lg);
+
+  overflow: hidden;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* 도넛 차트 - Refresh 버튼 */
+.chart-refresh {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.chart-refresh:hover {
+  background-color: var(--bg-secondary);
+  color: var(--primary-color);
+}
+
+/* 막대 차트 - 메뉴 버튼 */
+.chart-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+  color: var(--text-light);
+  transition: all var(--transition-fast);
+}
+
+.chart-menu:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.dots {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 선형 차트 - 필터 버튼들 */
+.chart-filters {
+  display: flex;
+  gap: var(--spacing-xs);
+  padding: 2px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+}
+
+.filter-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  background: none;
+  border-radius: calc(var(--border-radius) - 2px);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+
+/* 차트 콘텐츠 */
+.chart-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+  height: 300px;
+}
+
+/* 도넛 차트 전용 - 범례 */
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-fast);
+}
+
+.legend-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.legend-value {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .chart-container {
+    padding: var(--spacing-md);
+  }
+  
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .chart-title {
+    font-size: 1rem;
+  }
+  
+  .chart-refresh {
+    align-self: flex-end;
+  }
+  
+  .chart-filters {
+    align-self: flex-end;
+  }
+  
+  .filter-btn {
+    padding: var(--spacing-xs);
+    font-size: 0.7rem;
+  }
+  
+  .chart-content {
+    gap: var(--spacing-md);
+    height: 250px;
+  }
+  
+  .legend-item {
+    padding: var(--spacing-xs);
+  }
+  
+  .legend-label {
+    font-size: 0.8rem;
+  }
+  
+  .legend-value {
+    font-size: 0.75rem;
+  }
+} 

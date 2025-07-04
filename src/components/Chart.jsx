@@ -20,32 +20,40 @@ const ChartComponent = ({ type, data, title }) => {
   const getDonutOptions = () => ({
     chart: {
       type: 'donut',
-      height: 300,
+      height: 200,
       toolbar: {
         show: false
-      }
+      },
+      fontFamily: 'Pretendard',
     },
     labels: data.labels,
     colors: data.colors,
     plotOptions: {
       pie: {
         donut: {
-          size: '70%',
+          size: '80%',
           labels: {
             show: true,
             total: {
               show: true,
-              label: 'Total',
+              label: '전체',
               fontSize: '14px',
               fontWeight: 600,
               color: '#333'
-            }
-          }
+            },
+          },
         }
       }
     },
     legend: {
-      show: false
+      show: true,
+      position: 'bottom',
+      fontSize: '12px',
+      fontWeight: 500,
+      color: '#666',
+      labels: {
+        colors: '#666',
+      }
     },
     dataLabels: {
       enabled: false
@@ -57,7 +65,14 @@ const ChartComponent = ({ type, data, title }) => {
           height: 250
         }
       }
-    }]
+    }],
+    tooltip: {
+      y: {
+        formatter: (val) => {
+          return val.toLocaleString() + '대'
+        }
+      },
+    },
   })
 
   // 막대 차트 옵션
@@ -67,7 +82,8 @@ const ChartComponent = ({ type, data, title }) => {
       height: 300,
       toolbar: {
         show: false
-      }
+      },
+      fontFamily: 'Pretendard',
     },
     plotOptions: {
       bar: {
@@ -96,14 +112,21 @@ const ChartComponent = ({ type, data, title }) => {
         style: {
           colors: '#666',
           fontSize: '12px'
+        },
+        formatter: function (value) {
+          return value + '월'
         }
-      }
+      },
     },
     yaxis: {
       labels: {
         style: {
           colors: '#666',
           fontSize: '12px'
+        },
+        formatter: (val) => {
+          if (val >= 1000) return (val / 1000).toLocaleString() + 'k'
+          return val
         }
       }
     },
@@ -127,7 +150,17 @@ const ChartComponent = ({ type, data, title }) => {
           height: 250
         }
       }
-    }]
+    }],
+    tooltip: {
+      y: {
+        formatter: (val) => {
+          return val.toLocaleString() + '원'
+        }
+      },
+      x: {
+        formatter: (val) => '2025년 ' + val + '월'
+      }
+    },
   })
 
   // 선형 차트 옵션
@@ -137,11 +170,11 @@ const ChartComponent = ({ type, data, title }) => {
       height: 300,
       toolbar: {
         show: false
-      }
+      },
+      fontFamily: 'Pretendard',
     },
     stroke: {
       width: 3,
-      curve: 'smooth'
     },
     xaxis: {
       categories: data.categories,
@@ -155,7 +188,8 @@ const ChartComponent = ({ type, data, title }) => {
         style: {
           colors: '#666',
           fontSize: '12px'
-        }
+        },
+        formatter: (val) => val + '월'
       }
     },
     yaxis: {
@@ -163,23 +197,14 @@ const ChartComponent = ({ type, data, title }) => {
         style: {
           colors: '#666',
           fontSize: '12px'
+        },
+        formatter: (val) => {
+          if (val >= 1000) return (val / 1000).toLocaleString() + 'k'
+          return val
         }
       }
     },
     colors: data.colors,
-    fill: {
-      type: 'gradient',
-      gradient: {
-        shade: 'light',
-        type: 'vertical',
-        shadeIntensity: 0.5,
-        gradientToColors: undefined,
-        inverseColors: true,
-        opacityFrom: 0.5,
-        opacityTo: 0.1,
-        stops: [0, 100]
-      }
-    },
     grid: {
       borderColor: '#e9ecef',
       strokeDashArray: 5,
@@ -190,10 +215,10 @@ const ChartComponent = ({ type, data, title }) => {
       }
     },
     legend: {
-      position: 'top',
+      position: 'bottom',
       horizontalAlign: 'center',
       floating: true,
-      offsetY: -10,
+      offsetY: 30,
       fontSize: '12px',
       markers: {
         width: 8,
@@ -208,7 +233,18 @@ const ChartComponent = ({ type, data, title }) => {
           height: 250
         }
       }
-    }]
+    }],
+    tooltip: {
+      
+      x: {
+        formatter: (val) => '2025년 ' + val + '월'
+      },
+      y: {
+        formatter: (val) => {
+          return val.toLocaleString() + '명'
+        }
+      },
+    },
   })
 
   // 타입별 옵션 선택
@@ -249,35 +285,52 @@ const ChartComponent = ({ type, data, title }) => {
   )
 
   // 막대/선형 차트 렌더링
-  const renderOtherChart = () => (
-    <div className="chart-container">
-      <div className="chart-header">
-        <h3 className="chart-title">{title}</h3>
-        {type === 'line' ? (
-          <div className="chart-filters">
-            <button className="filter-btn active">1M</button>
-            <button className="filter-btn">3M</button>
-            <button className="filter-btn">6M</button>
-            <button className="filter-btn">1Y</button>
+  const renderOtherChart = () => {
+    // bar 차트일 때만 footer 계산
+    let footer = null
+    if (type === 'bar' && data && data.series && data.series[0] && Array.isArray(data.series[0].data)) {
+      const arr = data.series[0].data
+      const max = Math.max(...arr)
+      const min = Math.min(...arr)
+      const avg = Math.round(arr.reduce((a, b) => a + b, 0) / arr.length)
+      footer = (
+        <div className="chart-footer">
+          <div className="chart-footer-content">
+            <div className="chart-footer-item">
+              <div className="chart-footer-label">월간 최대</div>
+              <div className="chart-footer-value">{max.toLocaleString()}원</div>
+            </div>
+            <div className="chart-footer-item">
+              <div className="chart-footer-label">월간 최저</div>
+              <div className="chart-footer-value">{min.toLocaleString()}원</div>
+            </div>
+            <div className="chart-footer-item">
+              <div className="chart-footer-label">평균 매출</div>
+              <div className="chart-footer-value">{avg.toLocaleString()}원</div>
+            </div>
           </div>
-        ) : (
-          <button className="chart-menu">
-            <span className="dots">⋮</span>
-          </button>
-        )}
+        </div>
+      )
+    }
+    return (
+      <div className="chart-container">
+        <div className="chart-header">
+          <h3 className="chart-title">{title}</h3>
+        </div>
+        
+        <div className="chart-content">
+          <Chart
+            key={`${type}-${chartKey}`}
+            options={getChartOptions()}
+            series={data.series}
+            type={type}
+            height={300}
+          />
+        </div>
+        {footer}
       </div>
-      
-      <div className="chart-content">
-        <Chart
-          key={`${type}-${chartKey}`}
-          options={getChartOptions()}
-          series={data.series}
-          type={type}
-          height={300}
-        />
-      </div>
-    </div>
-  )
+    )
+  }
 
   return type === 'donut' ? renderDonutChart() : renderOtherChart()
 }

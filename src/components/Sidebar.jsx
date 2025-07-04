@@ -20,7 +20,7 @@ const iconMap = {
 
 const titleMap = {
   Dashboard: '대시보드',
-  VM: '브이데스크 PC 관리',
+  VM: '서비스 관리',
   Users: '회원관리',
   Payment: '결제관리',
   Analytics: '방문자 통계',
@@ -64,8 +64,8 @@ const Sidebar = () => {
               {!isSidebarCollapsed && (
                 <>
                   <span className="nav-text">{titleMap[item.title] || item.title}</span>
-                  {item.title === 'Dashboard' && (
-                    <span className="nav-badge">1</span>
+                  {item.title === '' && (
+                    <span className="nav-badge">73</span>
                   )}
                 </>
               )}

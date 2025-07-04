@@ -6,8 +6,8 @@ import ProductsTable from './ProductsTable'
 import {
   dashboardCards,
   orderStatistics,
-  yearlyStatistics,
-  monthlyRevenueData,
+  monthlyStatistics,
+  monthlyVisitorData,
   brandsList,
   topProducts
 } from '../data/dummyData'
@@ -39,21 +39,21 @@ const Dashboard = () => {
               <Chart
                 type="donut"
                 data={orderStatistics}
-                title="Orders Statistics"
+                title="PC 관리"
               />
             </div>
             <div className="chart-col">
               <Chart
                 type="bar"
-                data={yearlyStatistics}
-                title="Statistics"
+                data={monthlyStatistics}
+                title="월간 매출"
               />
             </div>
             <div className="chart-col">
               <Chart
                 type="line"
-                data={monthlyRevenueData}
-                title="Total Revenue"
+                data={monthlyVisitorData}
+                title="월간 방문 / 가입"
               />
             </div>
           </div>

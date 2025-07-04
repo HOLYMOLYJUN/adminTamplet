@@ -2,8 +2,8 @@
 export const dashboardCards = [
   {
     id: 1,
-    title: 'Monthly Sales (월간 매출)',
-    value: '$5.42M',
+    title: '월간 매출',
+    value: '20,000,000원',
     change: '+2.3%',
     isPositive: true,
     subtitle: 'Since last month',
@@ -11,8 +11,8 @@ export const dashboardCards = [
   },
   {
     id: 2,
-    title: 'Daily Sales (당일 매출)',
-    value: '$5.42M',
+    title: '당일 매출',
+    value: '1,530,000원',
     change: '+24.5%',
     isPositive: true,
     subtitle: 'Since last month',
@@ -20,7 +20,7 @@ export const dashboardCards = [
   },
   {
     id: 3,
-    title: 'Monthly Visitors (월간 방문자)',
+    title: '월간 방문자',
     value: '45.3k',
     change: '+3.2%',
     isPositive: true,
@@ -29,7 +29,7 @@ export const dashboardCards = [
   },
   {
     id: 4,
-    title: 'Daily Visitors (당일 방문자)',
+    title: '당일 방문자',
     value: '45.3k',
     change: '+5.7%',
     isPositive: true,
@@ -41,33 +41,54 @@ export const dashboardCards = [
 // 주문 통계 도넛 차트 데이터
 export const orderStatistics = {
   series: [965, 102, 75, 96],
-  labels: ['Direct', 'Marketing', 'Social', 'Affiliates'],
-  colors: ['#007bff', '#28a745', '#ffc107', '#dc3545']
+  labels: ['스탠다드', '비즈니스', '프리미엄', '만료된PC'],
+  colors: ['#5b69bc', '#ff8acc', '#10C469', '#999']
 }
 
 // 연도별 매출 통계 막대 차트 데이터
-export const yearlyStatistics = {
+export const monthlyStatistics = {
   series: [{
-    name: 'Revenue',
-    data: [ 92, 65, 100, 85, 75, 100]
+    name: '총 매출',
+    data: [
+      21123400, 
+      25345600, 
+      32789100,
+      28456700,
+      39123400, 
+      37234500 
+    ]
   }],
-  categories: [ '2020', '2021', '2022', '2023', '2024', '2025'],
+  categories: [ 7, 8, 9, 10, 11, 12],
   colors: ['#3a9be6']
 }
 
 // 월별 수익/지출 선형 차트 데이터
-export const monthlyRevenueData = {
+export const monthlyVisitorData = {
   series: [
     {
-      name: 'Total Revenue',
-      data: [65, 45, 70, 55, 75, 85, 70, 65, 75, 85, 90, 95]
+      name: '방문자 수',
+      data: [
+        120345,
+        153210,
+        201234,
+        178900,
+        256789,
+        231234 
+      ]
     },
     {
-      name: 'Total Expenses',
-      data: [35, 30, 45, 40, 50, 55, 45, 35, 40, 50, 60, 65]
+      name: '회원가입 수',
+      data: [
+        13450, 
+        18900, 
+        24500, 
+        21000, 
+        31200, 
+        28900  
+      ]
     }
   ],
-  categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  categories: [7, 8, 9, 10, 11, 12],
   colors: ['#28a745', '#007bff']
 }
 

@@ -224,6 +224,7 @@ export const topProducts = [
   }
 ]
 
+
 // 네비게이션 메뉴 데이터
 export const navigationMenu = [
   {
@@ -235,37 +236,64 @@ export const navigationMenu = [
   {
     id: 2,
     title: 'VM',
-    path: '/',
-    isActive: false
+    path: '/vm',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: '서브메뉴1', path: '/vm/sub1' },
+      { subMenuId: 2, title: '서브메뉴2', path: '/vm/sub2' },
+      { subMenuId: 3, title: '서브메뉴3', path: '/vm/sub3' },
+    ]
   },
   {
     id: 3,
     title: 'Users',
-    path: '/',
-    isActive: false
+    path: '/users',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: '서브메뉴1', path: '/users/sub1' },
+      { subMenuId: 2, title: '서브메뉴2', path: '/users/sub2' },
+      { subMenuId: 3, title: '서브메뉴3', path: '/users/sub3' },
+    ]
   },
   {
     id: 4,
-    title: 'Payment',
-    path: '/',
+    title: 'Sales',
+    path: '/sales',
     isActive: false
   },
   {
     id: 5,
-    title: 'Analytics',
-    path: '/',
+    title: 'Payment',
+    path: '/payment',
     isActive: false
   },
   {
     id: 6,
-    title: 'Permissions',
-    path: '/',
+    title: 'Analytics',
+    path: '/analytics',
     isActive: false
   },
   {
     id: 7,
+    title: 'VisitorLog',
+    path: '/visitor-log',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: '서브메뉴1', path: '/visitor-log/sub1' },
+      { subMenuId: 2, title: '서브메뉴2', path: '/visitor-log/sub2' },
+      { subMenuId: 3, title: '서브메뉴3', path: '/visitor-log/sub3' },
+    ]
+  },
+  {
+    id: 8,
+    title: 'Permissions',
+    path: '/permissions',
+    isActive: false
+  },
+  {
+    id: 9,
     title: 'Inquiries',
-    path: '/',
+    path: '/inquiries',
     isActive: false
   },
 ] 

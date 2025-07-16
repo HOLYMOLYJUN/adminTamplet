@@ -1,6 +1,6 @@
 # Admin Dashboard
 
-React 19 + Vite 기반의 관리자 대시보드 템플릿입니다.
+React 19 + Vite 기반의 관리자 대시보드 템플릿
 
 ## 주요 기능
 
@@ -22,32 +22,10 @@ React 19 + Vite 기반의 관리자 대시보드 템플릿입니다.
 - **부드러운 애니메이션**: 호버 효과 및 전환 효과
 
 ### 🔧 기술 스택
-- **React 19**: 최신 React 버전
-- **Vite**: 빠른 개발 서버 및 빌드 도구
-- **ApexCharts**: 차트 라이브러리
-- **순수 CSS**: 외부 CSS 프레임워크 없이 커스텀 스타일
-
-## 시작하기
-
-### 1. 의존성 설치
-```bash
-npm install
-```
-
-### 2. 개발 서버 실행
-```bash
-npm run dev
-```
-
-### 3. 빌드
-```bash
-npm run build
-```
-
-### 4. 프로덕션 미리보기
-```bash
-npm run preview
-```
+- **React 19**
+- **Vite**
+- **ApexCharts**
+- **CSS**
 
 ## 프로젝트 구조
 
@@ -74,18 +52,10 @@ admin_t/
         ├── Dashboard.css
         ├── DashboardCard.jsx
         ├── DashboardCard.css
-        ├── DonutChart.jsx
-        ├── DonutChart.css
-        ├── BarChart.jsx
-        ├── BarChart.css
-        ├── LineChart.jsx
-        ├── LineChart.css
-        ├── UserFeedbackList.jsx
-        ├── UserFeedbackList.css
-        ├── BrandsTable.jsx
-        ├── BrandsTable.css
-        ├── ProductsTable.jsx
-        └── ProductsTable.css
+        ├── Chart.jsx
+        ├── Chart.css
+        ├── Table.jsx
+        ├── Table.css
 ```
 
 ## 컴포넌트 설명
@@ -116,33 +86,6 @@ admin_t/
 @media (max-width: 480px) { ... }
 ```
 
-## CSS 변수 시스템
-
-```css
-:root {
-  /* 색상 */
-  --primary-color: #007bff;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
-  --danger-color: #dc3545;
-  
-  /* 여백 */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  
-  /* 그림자 */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-```
-
 ## 데이터 구조
 
-모든 데이터는 `src/data/dummyData.js`에서 관리되며, 실제 API 연결 시 해당 부분만 수정하면 됩니다.
-
-## 라이선스
-
-MIT License 
+모든 데이터는 `src/data/dummyData.js`에서 관리되며, 실제 API 연결 시 해당 부분만 수정

@@ -1,14 +1,14 @@
 import React from 'react'
 import DashboardCard from './DashboardCard'
 import Chart from './Chart'
-import BrandsTable from './BrandsTable'
-import ProductsTable from './ProductsTable'
+import Table from './Table'
 import {
   dashboardCards,
   orderStatistics,
   monthlyStatistics,
   monthlyVisitorData,
-  brandsList,
+  usersList,
+  paymentsList,
   topProducts
 } from '../data/dummyData'
 import './Dashboard.css'
@@ -63,15 +63,17 @@ const Dashboard = () => {
         {/* 테이블 섹션 */}
         <div className="tables-section">
           <div className="table-col">
-            <BrandsTable
-              brands={brandsList}
-              title="Brands Listing"
+            <Table
+              type="user"
+              data={usersList}
+              title="회원관리"
             />
           </div>
           <div className="table-col">
-            <ProductsTable
-              products={topProducts}
-              title="Top Selling Products"
+            <Table
+              type="payment"
+              data={paymentsList}
+              title="결제관리"
             />
           </div>
         </div>

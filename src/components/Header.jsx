@@ -22,7 +22,7 @@ const Header = () => {
       <div className="header-center">
       </div>
       
-      <div className="header-right">
+      <div className="header-ㅣㅣright">
         <div className="search-bar">
           <button className="search-btn">
             <span className="search-icon">

@@ -136,52 +136,47 @@ export const userFeedbacks = [
   }
 ]
 
-// 브랜드 리스트
-export const brandsList = [
+// 사용자 리스트
+export const usersList = [
   {
     id: 1,
-    name: 'TechNova',
-    country: 'Germany',
-    established: 'Since 2015',
-    stores: 1200,
-    products: 15320,
-    status: 'Active'
+    username: 'kimminsu',
+    provider: '구글',
+    email: 'minsu.kim@gmail.com',
+    ip: '192.168.1.10',
+    joinedAt: '2024-04-01'
   },
   {
     id: 2,
-    name: 'DecoLux',
-    country: 'France',
-    established: 'Since 2000',
-    stores: 450,
-    products: 6800,
-    status: 'Pending'
+    username: 'parkjiyoon',
+    provider: '네이버',
+    email: 'jiyoon.park@naver.com',
+    ip: '172.16.0.22',
+    joinedAt: '2024-04-03'
   },
   {
     id: 3,
-    name: 'InnoTech',
-    country: 'Japan',
-    established: 'Since 2012',
-    stores: 850,
-    products: 12500,
-    status: 'Active'
+    username: 'leeseojin',
+    provider: '카카오',
+    email: 'seojin.lee@kakao.com',
+    ip: '10.0.0.5',
+    joinedAt: '2024-04-05'
   },
   {
     id: 4,
-    name: 'WellCare',
-    country: 'UK',
-    established: 'Since 2008',
-    stores: 300,
-    products: 4500,
-    status: 'Active'
+    username: 'choiyuna',
+    provider: '구글',
+    email: 'yuna.choi@gmail.com',
+    ip: '192.168.1.55',
+    joinedAt: '2024-04-07'
   },
   {
     id: 5,
-    name: 'AutoDrive',
-    country: 'USA',
-    established: 'Since 1999',
-    stores: 600,
-    products: 8900,
-    status: 'Inactive'
+    username: 'jangdonghyuk',
+    provider: '네이버',
+    email: 'donghyuk.jang@naver.com',
+    ip: '172.16.0.33',
+    joinedAt: '2024-04-10'
   }
 ]
 
@@ -273,4 +268,58 @@ export const navigationMenu = [
     path: '/',
     isActive: false
   },
+] 
+
+// 결제관리 리스트
+export const paymentsList = [
+  {
+    id: 1,
+    username: '김민수',
+    method: '토스페이',
+    amount: '₩120,000',
+    paidAt: '2024-04-02'
+  },
+  {
+    id: 2,
+    username: '이민지',
+    method: '계좌이체',
+    amount: '₩55,000',
+    paidAt: '2024-04-04'
+  },
+  {
+    id: 3,
+    username: '이서진',
+    method: '카카오페이',
+    amount: '₩33,000',
+    paidAt: '2024-04-06'
+  },
+  {
+    id: 4,
+    username: '최유나',
+    method: '카드',
+    amount: '₩210,000',
+    paidAt: '2024-04-08'
+  },
+  {
+    id: 5,
+    username: '장동국',
+    method: '네이버페이',
+    amount: '₩77,000',
+    paidAt: '2024-04-11'
+  },
+  {
+    id: 6,
+    username: '박지윤',
+    method: '네이버페이',
+    amount: '₩120,000',
+    paidAt: '2024-04-12'
+  },
+  {
+    id: 7,
+    username: '이민진',
+    method: '네이버페이',
+    amount: '₩10,000',
+    paidAt: '2024-04-15'
+  },
+  
 ] 

@@ -58,23 +58,6 @@ admin_t/
         ├── Table.css
 ```
 
-## 컴포넌트 설명
-
-### 레이아웃 컴포넌트
-- **Sidebar**: 접힐 수 있는 네비게이션 사이드바
-- **Header**: 검색, 알림, 사용자 메뉴가 포함된 헤더
-- **Dashboard**: 메인 대시보드 레이아웃
-
-### 데이터 시각화 컴포넌트
-- **DashboardCard**: 통계 카드 컴포넌트
-- **DonutChart**: 도넛 차트 (ApexCharts)
-- **BarChart**: 막대 차트 (ApexCharts)
-- **LineChart**: 선형 차트 (ApexCharts)
-
-### 테이블 컴포넌트
-- **UserFeedbackList**: 사용자 피드백 리스트
-- **BrandsTable**: 브랜드 관리 테이블
-- **ProductsTable**: 제품 관리 테이블
 
 ## 반응형 브레이크포인트
 

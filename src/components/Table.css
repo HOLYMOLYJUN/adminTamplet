@@ -63,6 +63,9 @@
 .table-wrapper {
   overflow-x: auto;
 }
+.table-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
 
 .table {
   width: 100%;
@@ -207,44 +210,44 @@
   .table-container {
     padding: var(--spacing-md);
   }
-  
+
   .table-header {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
   }
-  
+
   .add-brand-btn {
     align-self: flex-end;
   }
-  
+
   .table-title {
     font-size: 1rem;
   }
-  
+
   .table {
     font-size: 0.8rem;
   }
-  
+
   .table th,
   .table td {
     padding: var(--spacing-sm);
   }
-  
+
   .table-cell-main {
     font-size: 0.8rem;
   }
-  
+
   .table-cell-sub {
     font-size: 0.7rem;
   }
-  
+
   .pagination {
     flex-direction: column;
     gap: var(--spacing-sm);
   }
-  
+
   .pagination-controls {
     order: -1;
   }
-} 
+}

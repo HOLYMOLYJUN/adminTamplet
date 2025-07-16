@@ -224,6 +224,7 @@ export const topProducts = [
   }
 ]
 
+
 // 네비게이션 메뉴 데이터
 export const navigationMenu = [
   {
@@ -235,37 +236,64 @@ export const navigationMenu = [
   {
     id: 2,
     title: 'VM',
-    path: '/',
-    isActive: false
+    path: '/vm',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: 'PC 관리', path: '/vm/pc' },
+      { subMenuId: 2, title: '서버리스트', path: '/vm/serverList' },
+      { subMenuId: 3, title: '서비스 접속내역', path: '/vm/serviveHistory' },
+    ]
   },
   {
     id: 3,
     title: 'Users',
-    path: '/',
-    isActive: false
+    path: '/users',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: '활성화 PC', path: '/users/activePC' },
+      { subMenuId: 2, title: '만료된 PC', path: '/users/expiredPC' },
+    ]
   },
   {
     id: 4,
-    title: 'Payment',
-    path: '/',
+    title: 'Sales',
+    path: '/sales',
     isActive: false
   },
   {
     id: 5,
-    title: 'Analytics',
-    path: '/',
+    title: 'Payment',
+    path: '/payment',
     isActive: false
   },
   {
     id: 6,
-    title: 'Permissions',
-    path: '/',
+    title: 'Analytics',
+    path: '/analytics',
     isActive: false
   },
   {
     id: 7,
+    title: 'VisitorLog',
+    path: '/visitor-log',
+    isActive: false,
+    subMenu: [
+      { subMenuId: 1, title: 'IP 할당로그', path: '/visitor-log/ip' },
+      { subMenuId: 2, title: '접속 로그', path: '/visitor-log/access' },
+      { subMenuId: 3, title: '리부팅 로그', path: '/visitor-log/reboot' },
+      { subMenuId: 4, title: '리셋 로그', path: '/visitor-log/reset' },
+    ]
+  },
+  {
+    id: 8,
+    title: 'Permissions',
+    path: '/permissions',
+    isActive: false
+  },
+  {
+    id: 9,
     title: 'Inquiries',
-    path: '/',
+    path: '/inquiries',
     isActive: false
   },
 ] 

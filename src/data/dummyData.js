@@ -239,9 +239,9 @@ export const navigationMenu = [
     path: '/vm',
     isActive: false,
     subMenu: [
-      { subMenuId: 1, title: '서브메뉴1', path: '/vm/sub1' },
-      { subMenuId: 2, title: '서브메뉴2', path: '/vm/sub2' },
-      { subMenuId: 3, title: '서브메뉴3', path: '/vm/sub3' },
+      { subMenuId: 1, title: 'PC 관리', path: '/vm/pc' },
+      { subMenuId: 2, title: '서버리스트', path: '/vm/serverList' },
+      { subMenuId: 3, title: '서비스 접속내역', path: '/vm/serviveHistory' },
     ]
   },
   {
@@ -250,9 +250,8 @@ export const navigationMenu = [
     path: '/users',
     isActive: false,
     subMenu: [
-      { subMenuId: 1, title: '서브메뉴1', path: '/users/sub1' },
-      { subMenuId: 2, title: '서브메뉴2', path: '/users/sub2' },
-      { subMenuId: 3, title: '서브메뉴3', path: '/users/sub3' },
+      { subMenuId: 1, title: '활성화 PC', path: '/users/activePC' },
+      { subMenuId: 2, title: '만료된 PC', path: '/users/expiredPC' },
     ]
   },
   {
@@ -279,9 +278,10 @@ export const navigationMenu = [
     path: '/visitor-log',
     isActive: false,
     subMenu: [
-      { subMenuId: 1, title: '서브메뉴1', path: '/visitor-log/sub1' },
-      { subMenuId: 2, title: '서브메뉴2', path: '/visitor-log/sub2' },
-      { subMenuId: 3, title: '서브메뉴3', path: '/visitor-log/sub3' },
+      { subMenuId: 1, title: 'IP 할당로그', path: '/visitor-log/ip' },
+      { subMenuId: 2, title: '접속 로그', path: '/visitor-log/access' },
+      { subMenuId: 3, title: '리부팅 로그', path: '/visitor-log/reboot' },
+      { subMenuId: 4, title: '리셋 로그', path: '/visitor-log/reset' },
     ]
   },
   {

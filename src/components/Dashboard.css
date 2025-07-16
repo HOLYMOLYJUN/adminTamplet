@@ -58,7 +58,7 @@
 /* 테이블 섹션 */
 .tables-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -71,17 +71,9 @@
   .dashboard-cards {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
-  
-  .charts-row {
-    grid-template-columns: 1fr;
-  }
-  
+
   .chart-col {
     min-height: 350px;
-  }
-  
-  .tables-section {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -89,28 +81,27 @@
   .dashboard {
     padding: var(--spacing-md);
   }
-  
+
   .dashboard-content {
     gap: var(--spacing-md);
   }
-  
+
   .dashboard-cards {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
   }
-  
+
   .charts-section {
     gap: var(--spacing-md);
   }
-  
+
   .charts-row {
     gap: var(--spacing-md);
   }
-  
+
   .chart-col {
     min-height: 300px;
   }
-  
+
   .tables-section {
     gap: var(--spacing-md);
   }
@@ -120,16 +111,8 @@
   .dashboard {
     padding: var(--spacing-sm);
   }
-  
+
   .dashboard-cards {
     grid-template-columns: 1fr;
   }
-  
-  .chart-col {
-    min-height: 250px;
-  }
-  
-  .table-col {
-    min-height: 300px;
-  }
-} 
+}
